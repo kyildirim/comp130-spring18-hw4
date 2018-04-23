@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Dimension;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import acm.graphics.GImage;
 import acm.program.GraphicsProgram;
 
 public class Main extends GraphicsProgram {
@@ -321,10 +323,40 @@ public class Main extends GraphicsProgram {
 	
 	//Animation Operations
 	public void animate(){
+		removeAll();
 		for(int i=0;i<scenes.size();i++){
+			String imgFile="";
+			double duration;
+			Color color; 
+			Dimension from,to;
 			String scene = scenes.get(i);
-			
+			String sceneDesc[] = scene.split(" ");
+			int j=0;
+			for(int k=0; k<sceneDesc.length; j++){
+				String currStr = sceneDesc[k].toLowerCase();
+				String graConst = getGrammarConstants(grammar.get(j));
+				if(graConst.equals("")){
+					if(grammar.get(j).equals("image"))imgFile=currStr;
+					if(grammar.get(j).equals("color"))color=Color.getColor(currStr);
+					k++;
+				}else if(graConst.equals("for$2")){
+					duration = Integer.parseInt(sceneDesc[k+1]);
+					if(sceneDesc[k+2].toLowerCase().substring(0,6).equals("second"))duration*=1000;
+					k+=3;
+				}else if(graConst.equals("from$1")){
+					from = locs.get(sceneDesc[k+1].toLowerCase());
+					k+=2;
+				}else if(graConst.equals("to$1")){
+					from = locs.get(sceneDesc[k+1].toLowerCase());
+					k+=2;
+				}
+			}
+			GImage image = new GImage(imgFile+IMAGE_TYPE);
 		}
+	}
+	
+	public void clearScreen(){
+		removeAll();
 	}
 	//End of Animation Operations
 	
