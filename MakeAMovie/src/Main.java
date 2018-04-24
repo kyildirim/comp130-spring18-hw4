@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import acm.graphics.GImage;
+import acm.graphics.*;
 import acm.program.GraphicsProgram;
 
 public class Main extends GraphicsProgram {
@@ -36,7 +36,8 @@ public class Main extends GraphicsProgram {
 			+ "add#addScene#addscene#addScene#addScene#addScene#"
 			+ "removescene#removeScene#removeScene#removeScene#"
 			+ "settitle#setTitle#setTitle#setTitle#"
-			+ "create#create#open#open#close#close#save#save";
+			+ "create#create#open#open#close#close#save#save#"
+			+ "run#animate#play#animate#animate#animate";
 	
 	public void run(){
 		constructCommandDefinitions();
@@ -323,12 +324,13 @@ public class Main extends GraphicsProgram {
 	
 	//Animation Operations
 	public void animate(){
-		removeAll();
+		
 		for(int i=0;i<scenes.size();i++){
+			removeAll();
 			String imgFile="";
-			double duration;
-			Color color; 
-			Dimension from,to;
+			double duration=0;
+			Color color = Color.BLACK; 
+			Dimension from = null, to=null;
 			String scene = scenes.get(i);
 			String sceneDesc[] = scene.split(" ");
 			int j=0;
@@ -347,12 +349,24 @@ public class Main extends GraphicsProgram {
 					from = locs.get(sceneDesc[k+1].toLowerCase());
 					k+=2;
 				}else if(graConst.equals("to$1")){
-					from = locs.get(sceneDesc[k+1].toLowerCase());
+					to = locs.get(sceneDesc[k+1].toLowerCase());
 					k+=2;
 				}
 			}
 			GImage image = new GImage(imgFile+IMAGE_TYPE);
+			image = recolorImage(image, color);
+			add(image, from.getWidth(), from.getHeight());
+			double dX = (to.getWidth()-from.getWidth())/((double)duration);
+			double dY = (to.getHeight()-from.getHeight())/((double)duration);
+			for(int t = 0; t<duration; t++){
+				image.move(dX, dY);
+				pause(1);
+			}
 		}
+	}
+	
+	public GImage recolorImage(GImage img, Color c){
+		return img;
 	}
 	
 	public void clearScreen(){

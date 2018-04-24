@@ -1,0 +1,287 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[useregional]{datetime2}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{listings} 
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{titling}
+
+\usepackage{color}
+
+\setcounter{secnumdepth}{4}
+
+\setlength{\droptitle}{-4em}
+
+%Project Title
+\newcommand{\projectTitle}{Make A Movie}
+%Homework Number
+\newcommand{\hwNumber}{4}
+
+%Submission date goes here.
+%Format: #Day of Month #Hour:#Minute AM/PM
+\newcommand{\projectDate}{11th of May 11:59 PM}
+
+%Contact to reach.
+\newcommand{\contactName}{Kaan Yıldırım}
+\newcommand{\contactMail}{kyildirim14@ku.edu.tr}
+
+%Define colors as shown below to use in text.
+\definecolor{Red}{RGB}{255, 0, 0}
+\definecolor{Green}{RGB}{0, 255, 0}
+\definecolor{Blue}{RGB}{0, 0, 255}
+
+\title{\projectTitle\vspace{-2em}}
+
+\date{Submission Date: \projectDate}
+
+\begin{document}
+	\maketitle
+	
+	\lstset{language=Java}
+	\pagestyle{fancy}
+	\fancyhf{}
+	\chead{\projectTitle}
+	\rhead{Homework \#\hwNumber}
+	\lhead{COMP 130}
+	\lfoot{\nouppercase{\leftmark}}
+	\rfoot{Page \thepage}
+	\thispagestyle{fancy}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+	
+	
+	\section{Introduction}
+	
+	%Do not change this section.
+	\subsection{Submission}
+	Submit a \textbf{folder} that is \textbf{only} containing your Java source files (*.java) to the course's Homework folder. 
+	\\
+	
+	Full path: \textbf{F:\textbackslash COURSES\textbackslash UGRADS\textbackslash COMP130\textbackslash Homework\textbackslash}
+	\\
+	
+	\noindent \textbf{Note:} MAVA 130 students, please submit to the folder under the COMP 130 directory.
+	\\
+	
+	\noindent Please use the following naming convention for the submitted folders: \linebreak
+	
+	\textbf{YourPSLetter\_CourseCode\_Surname\_Name\_HWNumber\_Semester}
+	\\
+	
+	\noindent Example folder names:
+	\begin{itemize}
+		\item \textbf{PSA\_COMP130\_Surname\_Name\_HW\hwNumber\_S18}
+		\item \textbf{PSB\_MAVA130\_Surname\_Name\_HW\hwNumber\_S18}
+	\end{itemize}
+	
+	\noindent Additional notes:
+	\begin{itemize}
+		\item Using the naming convention properly is important, failing to do so may be \textbf{penalized}.
+		\item \textbf{Do not} use Turkish characters when naming files or folders.
+		\item Submissions with unidentifiable names will be \textbf{disregarded} completely. (ex. "homework1", "project" etc.) 
+		\item Please write your name into the Java source file where it is asked for.
+	\end{itemize}
+	
+	%Do not change this section.
+	\subsection{Academic Honesty}
+	Koç University's \emph{\href{https://vpaa.ku.edu.tr/sites/vpaa.ku.edu.tr/files/Misc_Documents/Statement_on_Academic_Honesty.pdf}{Statement on Academic Honesty}} holds for all the homeworks given in this course. Failing to comply with the statement will be penalized accordingly. If you are unsure whether your action violates the code of conduct, please consult with your instructor.
+	
+	\subsection{Aim of the Project}
+	In this project you are expected to create a Command Line Interface (CLI) that will allow the user to create animations. This project also expects you to display the created animation to the user. Your program must be able to save and load animation files.
+	
+	%Do not change this section.
+	\subsection{Given Code}
+	This part is \textbf{optional} but advised as it will allow you to understand the given partitions of the code better. \textbf{Do not} change anything in the code if it is indicated to you with a comment. The code given to you has something called \textbf{JavaDoc} comments above all the methods. These comments allow you to view various information about the method when you mouse over the name of the method. Below are the methods given to you in the code with their explanation.
+	
+	%Explain the methods you have given in this section.
+	%Examples are given below.
+	\subsubsection{Given Methods}
+	
+	%This is a list. Lists always begin with this tag. "itemize" describes the list, not begin.
+	\begin{itemize}
+		
+		%This is a list item. There is no need to indicate the end for an item as it ends at the next item tag.
+		\item
+		
+		%This is a code block. "lstlisting" describes a code block.
+		\begin{lstlisting}
+		void methodWithNoArguments()
+		\end{lstlisting}
+		This is an example method with no arguments.
+		\item
+		\begin{lstlisting}
+		int methodWithIntegerValue()
+		\end{lstlisting}
+		
+		%This is an example usage of inline code block.
+		This is an example method that returns an \lstinline{int}.
+		\item
+		\begin{lstlisting}
+		void methodWithArguments(int arg1, int arg2)
+		\end{lstlisting}
+		This method constructs the roads and the crossing and adds them to the screen. See below for how the roads are created individually.
+		
+	\end{itemize}
+	
+	%Do not change this section.
+	\subsubsection{Given Constants}
+	Constants are given at the bottom of the project. All constants provide \textbf{JavaDoc} comments above them. Please read these to understand what constant is used for what. \textbf{Do not} use another variable or a static value for something if there is a constant variable defined for that purpose.
+	
+	%Do not change this section.
+	\subsection{Further Questions}
+	For further questions \textbf{about the project} you may contact \textbf{\contactName} at \href{mailto:\contactMail}{\mbox{[\contactMail]}}. Note that it may take up to 24 hours before you receive a response so please ask your questions \textbf{before} it is too late. No questions will be answered when there is \textbf{less than two days} left for the submission.
+	
+	%This allows you to start a new page regardless of where the previous page ends. Please try to separate sections properly, however refrain from leaving extensive amounts of blank space as this may cause the students to think that the project file ends there.
+	\newpage
+	
+	\section{Project Tasks}
+	\label{tasks}
+	The project tasks are divided into subsections to make it easier to understand and implement. You are strictly advised to follow the given order of tasks, however should you choose not to follow the tasks in order, it is possible to implement the project in any order.
+	
+	%Number of task groups and tasks are dependent on the project. Feel free to change accordingly.
+	\subsection{Creating a Command Line Interface}
+	A Command Line Interface (CLI) is a means of interacting with a program where the user issues commands in the form of successive lines of texts. In this task you are expected to create a simple CLI that needs to be capable of recognizing the following commands:
+	\label{commands}
+	\begin{itemize}
+		\item create: Creates a new project.
+		\item open: Opens an existing project.
+		\item settitle: Sets the title for the project.
+		\item setgrammar: Sets the grammar for the project.
+		\item addscene: Adds a scene to the current project.
+		\item removescene: Removes a scene from the current project.
+		\item listscenes: Lists all the scenes in the project.
+		\item play: Plays the scenes in order.
+		\item save: Saves the project to a file.
+		\item close: Closes a project.
+		\item quit: Quits the program.
+		\item help: Display additional information.
+	\end{itemize}
+	
+	\subsubsection{Building a Basic CLI}
+	
+	In its most basic form a CLI reads the user input as a string and parses it to call different commands according to the input text. You may want to start by implementing a simple code that asks for user input continuously. Once you have accomplished this, try detecting the input text of "quit". Modify your code so that it asks for a new input from the user as long as the input is not "quit". \\
+
+	\noindent \textbf{Advice:} You may want to echo (print back to the screen) the input you receive from the user to clearly see that you can read the input.
+	
+	\subsubsection{Detecting All Commands}
+	
+	Now that you have a basic CLI that is capable of recognizing a specific input, you can proceed by detecting all the commands shown in Section \ref{commands}. You may modify the names of the commands, however you are required to state all the changes when the "help" command is called. Note that as you implement the tasks below, you are expected to link them to these commands.
+	
+	\noindent \textbf{Advice:} You can implement temporary methods for all the commands you have detected and for now print a text that states the command is executed properly.
+	
+	\subsubsection{Distinguishing Commands From Output}
+	
+	If you have implemented the suggested way of checking your CLI, you may have noticed that the input and the output lines are mixing up. To prevent this confusion you are expected to print a constant string before taking an input from the user. This is the string defined as \textbf{CLI\_INPUT\_CONST} in the given code.
+	
+	%This is a figure. image.png is the path of the image file that will be used.
+	%\begin{figure}[!htb]
+	%	\centering
+	%	\includegraphics[width=0.5\textwidth]{image.png}
+	%	\caption{Example image with a caption. Note that all image captions are titled with the word "Figure" followed by a number. You can use labels to refer to figures as well.}\label{fig:image}
+	%\end{figure}
+	
+	%This is a referral to Figure \ref{fig:image}. 
+	
+	\subsection{Creating a New Project}
+	In this task you will create a new project from scratch. To be able to achieve this, you need to first understand the animation file format. Below, you can find an example valid project file.\\
+	
+	\begin{lstlisting}
+		Title New Movie
+		Images ball tree
+		Grammar time color image from to
+		Scenes
+		For 5 seconds red ball from left to right
+		For 1500 milliseconds green tree from bottom to top
+	\end{lstlisting}
+	
+	The first line always starts with the keyword \textbf{Title} and is followed by the title of the animation. Note that the animation title is not necessarily a single word. The second line always starts with the keyword \textbf{Images} and is followed by the name of all image files that are going to be used in the animation. The third line always starts with the keyword \textbf{Grammar} and is followed by the grammar specification of the animation. The fourth line is the keyword \textbf{Scenes} which is followed by scene descriptions, one per line. The scene descriptions are required to follow the grammar.\\
+	
+	The grammar allows the user to change the way they want to describe the scene. As a real world example, you can see that Turkish and English have different grammars. Below is a list of all grammar descriptors defined for this project.
+	\label{grammar}
+	\begin{itemize}
+		\item color: A single word describing a color. Example: red
+		\item image: A single word that is the name of a image file. Example: plan
+		\item from: A two word descriptor that starts with the keyword \textbf{from} and is followed by a location. Example: from left
+		\item to: A two word descriptor that starts with the keyword \textbf{to} and is followed by a location. Example: to right
+		\item time: A three word descriptor that starts with the keyword \textbf{for} and is followed by an integer value which is followed by either the word \textbf{second(s)} or \textbf{millisecond(s)}.
+	\end{itemize}
+
+	\noindent \textbf{Note:} The locations described in the \textbf{from} and \textbf{to} descriptors can take the following values: left, right, top, bottom, center.
+	
+	\subsubsection{Creating a New Project, Actually.}
+	
+	In this task you are required to start implementing the commands that your CLI can detect. Start with the \textbf{create} command, which is expected to ask the user for a new project name. (Note that this is different from the project title.) Once you get this name for the project, modify your CLI so that it displays this name before the \textbf{CLI\_INPUT\_CONST} seperated with a '@' character. \\
+	
+	Example for project name Example: \textbf{Example@MakeAMovie -\textgreater}\\
+	
+	Now that you have created a new project (not yet, really) you may also implement the \textbf{settitle} command. This command will ask the user for a title, later on you will be expected to save these to a file so please make sure that you do not lose any information the user inputs.\\
+	
+	Once you achieved getting the title from the user, you may proceed with the \textbf{setgrammar} command. This command will take the ordering of the grammar descriptors defined in Section \ref{grammar} from the user. You will later on use this to parse the animation scenes.\\
+	
+	\noindent \textbf{Hint:} You may want to save the grammar to either a string or an array of strings. \\
+	
+	As you have acquired the grammar specification, you may now allow the user to start inputting new scenes. Implement the \textbf{addscene} command so that the user can add a scene by describing it according to the grammar that they defined. This command will read a \textbf{single} line of user input. \\
+	
+	After an excessive usage of \textbf{addscene} command a user may lose track of the scenes added, and may want to see what is currently in the project. At this point you are expected to implement the \textbf{listscenes} command that will list all the current scenes in order, starting their enumeration from 1. (Meaning the first scene is the scene number 1) \\
+	
+	Once seeing all the scenes present in the project, a user may want to remove a scene from the animation. Notice how you enumerated the scenes in the \textbf{listscenes} command, you are now required to implement \textbf{removescene} command. This command will ask the user to input a scene number, and will remove it from the project. After a removal, the enumeration of the scenes may change if the scene removed was not the last scene. (In an animation with four scenes, the removal of second scene would make the third the second and the fourth the third.) \\
+	
+	
+	
+	\subsubsection{Task 2 of Task Group 2}
+	Second task. Or \emph{italic}.
+	
+	\subsubsection{Task 3 of Task Group 2}
+	Third task. Or \underline{underlined}.
+	
+	\subsection{Task Group 3}
+	Third Task Group. Another way of better expressing your task is the inclusion of colors.
+	
+	\subsubsection{Task 1 of Task Group 3}
+	First task. \textcolor{Red}{This text is colored red.}
+	
+	\subsubsection{Task 2 of Task Group 3}
+	Second task. The word \textbf{\textcolor{Blue}{blue}} is both colored and \textbf{bold} in this example.
+	
+	\subsubsection{Task 3 of Task Group 3}
+	Third task. \textcolor{Red}{P}\textcolor{Green}{l}\textcolor{Blue}{e}\textcolor{Red}{a}\textcolor{Green}{s}\textcolor{Blue}{e} use coloring \textbf{sparingly} as it is may become hard to read.
+	
+	%Do not change this section.
+	\subsection{End of Project}
+	Your project ends here. You may continue to tinker with the code to implement any desired features and discuss them with your section leader. Below in the \textbf{Section \ref{further}} are further tasks for you to implement if you are willing to continue practicing the topics. However, \textbf{do not} include any additional features that you implement after this point in to your submission.  
+	\\
+	
+	\noindent \textbf{Final Warning: Do not include anything beyond this point to your submission. Points may be deducted from your grade as Section \ref{further} alters the normal behavior of the simulation.} 
+	
+	%Do not change this section.
+	\section{Further Tasks}
+	\label{further}
+	Tasks described in this section are \textbf{not} included to your project, but are provided for studying the topics further. \textbf{Do not} submit your project with any of these tasks completed. You will only be graded for the tasks in \textbf{Section \ref{tasks}}. Also note that tasks below are meant to be implemented on their own but may function together as well.
+	
+	%You may alter the number of further tasks according to your project.
+	\subsection{Further Task 1}
+	Any further tasks that may be used by the students to study further and improve their skills is described here.
+	
+	\subsubsection{Task 1 of Further Task 1}
+	First task.
+	
+	\subsubsection{Task 2 of Further Task 1}
+	Second task.
+	
+	\subsubsection{Task 3 of Further Task 1}
+	Second task.
+	
+	\subsubsection{Further Task 2}
+	Alternatively further tasks may be short enough to not include task. In this case just explain the task in this section.
+	
+	\subsubsection{Further Task 3}
+	Third further task.
+	
+\end{document}
