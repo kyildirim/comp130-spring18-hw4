@@ -6,13 +6,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import acm.graphics.*;
+import acm.graphics.GImage;
 import acm.program.GraphicsProgram;
 
 public class Main extends GraphicsProgram {
@@ -339,7 +340,7 @@ public class Main extends GraphicsProgram {
 				String graConst = getGrammarConstants(grammar.get(j));
 				if(graConst.equals("")){
 					if(grammar.get(j).equals("image"))imgFile=currStr;
-					if(grammar.get(j).equals("color"))color=Color.getColor(currStr);
+					if(grammar.get(j).equals("color"))color=generateColorFromString(currStr);
 					k++;
 				}else if(graConst.equals("for$2")){
 					duration = Integer.parseInt(sceneDesc[k+1]);
@@ -366,7 +367,31 @@ public class Main extends GraphicsProgram {
 	}
 	
 	public GImage recolorImage(GImage img, Color c){
-		return img;
+		int[][] pxl = img.getPixelArray();
+		for(int i = 0; i<pxl.length; i++){
+			for(int j = 0; j<pxl[0].length; j++){
+				pxl[i][j] = generatePixelFromColor(pxl[i][j], c);
+			}
+		}
+		return new GImage(pxl);
+	}
+	
+	public int generatePixelFromColor(int pix, Color c){
+		if(GImage.getAlpha(pix) > 0){
+			pix = GImage.createRGBPixel(c.getRed(), c.getGreen(), c.getBlue(), GImage.getAlpha(pix));
+		}
+		return pix;
+	}
+	
+	public Color generateColorFromString(String str){
+		Color color;
+		try {
+		    Field field = Color.class.getField(str);
+		    color = (Color)field.get(null);
+		} catch (Exception e) {
+		    color = Color.BLACK;
+		}
+		return color;
 	}
 	
 	public void clearScreen(){
@@ -380,7 +405,6 @@ public class Main extends GraphicsProgram {
 	
 	public static String FILE_TYPE = ".txt";
 	public static String IMAGE_TYPE = ".png";
-	public static int ANIMATION_STEP = 10;
 	
 }
 

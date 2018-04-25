@@ -191,7 +191,7 @@
 	
 	\subsection{Creating a New Project}
 	In this task you will create a new project from scratch. To be able to achieve this, you need to first understand the animation file format. Below, you can find an example valid project file.\\
-	
+	\label{example}
 	\begin{lstlisting}
 		Title New Movie
 		Images ball tree
@@ -233,25 +233,25 @@
 	
 	Once seeing all the scenes present in the project, a user may want to remove a scene from the animation. Notice how you enumerated the scenes in the \textbf{listscenes} command, you are now required to implement \textbf{removescene} command. This command will ask the user to input a scene number, and will remove it from the project. After a removal, the enumeration of the scenes may change if the scene removed was not the last scene. (In an animation with four scenes, the removal of second scene would make the third the second and the fourth the third.) \\
 	
+	\subsubsection{Saving and Loading a Project}
+
+	While testing your program you may have noticed that it is annoying to reenter all the information about a project. To solve this problem, you are expected to implement \textbf{save} command. Create a new file using the project name (not project title) and the \textbf{FILE\_TYPE} constant provided. (Note that the FILE\_TYPE is the extension of the file, thus it is required to be at the end of the file name) You are required to save the project information in the same format as provided and explained in Section \ref{example}. \\
 	
+	Now that you can save your project files, you also need to be able to open them later on using the \textbf{open} command. This command asks the user for a file name and loads the information saved in that file. (Note that the user enters the file name without the FILE\_TYPE)
 	
-	\subsubsection{Task 2 of Task Group 2}
-	Second task. Or \emph{italic}.
+	\subsection{Making Your Film (Where the Magic Happens)}
+	Up until now, you worked with the boring infrastructure of the project. Now is the time for you to become the director of your (or maybe someone else's) film! The tasks below will guide you through the process of animating the scenes.
+ 	
+	\subsubsection{Creating an Animation Loop}
+	An animation consists of at least one scene. However one scene is hardly enough to express anything meaningful. You may find it beneficial to create a loop that iterates over all the scenes, before starting the animation part itself. In the next task you may simply fill in this loop to actually animate all the scenes.
 	
-	\subsubsection{Task 3 of Task Group 2}
-	Third task. Or \underline{underlined}.
+	\subsubsection{Animating the Scenes, Actually}
+	Animating a scene is nothing more than extracting meaningful information from the scene according to the grammar and applying your graphics knowledge to it. You are expected to load and recolor the image file in the scene according to the color given in the scene description.\\
 	
-	\subsection{Task Group 3}
-	Third Task Group. Another way of better expressing your task is the inclusion of colors.
+	Once you obtain a correctly recolored image file, you can add it to the location specified by the \textbf{from} descriptor. Note that you are expected to place the image in the center of the specified location. (i.e. placing an image to the left means that the middle of the left edge of the image must coincide with the middle of the left edge of the screen.)\\
 	
-	\subsubsection{Task 1 of Task Group 3}
-	First task. \textcolor{Red}{This text is colored red.}
+	Now that you have the image on the screen, you need to move it to the location specified by the \textbf{to} descriptor. Note that this movement must be \textbf{uniform} and must take exactly the amount of time specified by the \textbf{for} descriptor.
 	
-	\subsubsection{Task 2 of Task Group 3}
-	Second task. The word \textbf{\textcolor{Blue}{blue}} is both colored and \textbf{bold} in this example.
-	
-	\subsubsection{Task 3 of Task Group 3}
-	Third task. \textcolor{Red}{P}\textcolor{Green}{l}\textcolor{Blue}{e}\textcolor{Red}{a}\textcolor{Green}{s}\textcolor{Blue}{e} use coloring \textbf{sparingly} as it is may become hard to read.
 	
 	%Do not change this section.
 	\subsection{End of Project}
