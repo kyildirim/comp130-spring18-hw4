@@ -1,4 +1,4 @@
-# Compiled class file
+<65;11;7M[<65;11;7M]# Compiled class file
 *.class
 
 # Log file
@@ -23,3 +23,11 @@ hs_err_pid*
 
 # Preference Files
 *.prefs
+
+# TeX
+*.aux
+*.out
+*.synctex.gz
+
+# Additional Java
+*.policy.applet
