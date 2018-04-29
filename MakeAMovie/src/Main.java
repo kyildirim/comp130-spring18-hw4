@@ -52,18 +52,23 @@ public class Main extends GraphicsProgram {
 	}
 	
 	/**
+	 * Constant <code>String</code> used to prompt user for commands.
+	 */
+	public static String CLI_INPUT_STR = "MakeAMovie -> ";
+	
+	/**
 	 * File extension of project files.
 	 */
 	public static String FILE_TYPE = ".txt";
 	
 	/**
+	 * Path to the folder enclosing the images.
+	 */
+	public static String LIBRARY_PATH = "lib/";
+	
+	/**
 	 * File extension of image fles.
 	 */
 	public static String IMAGE_TYPE = ".png";
-	
-	/**
-	 * Constant <code>String</code> used to prompt user for commands.
-	 */
-	public static String CLI_INPUT_STR = "MakeAMovie -> ";
 	
 }

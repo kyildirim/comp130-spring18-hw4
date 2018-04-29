@@ -13,32 +13,18 @@
 \usepackage{caption}
 \usepackage{titling}
 \usepackage{varwidth}
-
 \usepackage{color}
 
 \setcounter{secnumdepth}{4}
-
 \setlength{\droptitle}{-4em}
-
 \graphicspath{{../img/}}
 
-%Project Title
 \newcommand{\projectTitle}{Make A Movie}
-%Homework Number
 \newcommand{\hwNumber}{4}
+\newcommand{\projectDate}{8th of May 11:59 PM}
 
-%Submission date goes here.
-%Format: #Day of Month #Hour:#Minute AM/PM
-\newcommand{\projectDate}{11th of May 11:59 PM}
-
-%Contact to reach.
 \newcommand{\contactName}{Kaan Yıldırım}
 \newcommand{\contactMail}{kyildirim14@ku.edu.tr}
-
-%Define colors as shown below to use in text.
-\definecolor{Red}{RGB}{255, 0, 0}
-\definecolor{Green}{RGB}{0, 255, 0}
-\definecolor{Blue}{RGB}{0, 0, 255}
 
 \title{\projectTitle\vspace{-2em}}
 
@@ -94,7 +80,7 @@
 	Koç University's \emph{\href{https://vpaa.ku.edu.tr/sites/vpaa.ku.edu.tr/files/Misc_Documents/Statement_on_Academic_Honesty.pdf}{Statement on Academic Honesty}} holds for all the homeworks given in this course. Failing to comply with the statement will be penalized accordingly. If you are unsure whether your action violates the code of conduct, please consult with your instructor.
 	
 	\subsection{Aim of the Project}
-	In this project you are expected to create a \emph{\href{https://en.wikipedia.org/}{Command Line Interface}} (CLI) that will allow the user to create animations. This project also expects you to display the created animation to the user. Your program must be able to save and load animation files.
+	In this project you are expected to create a \emph{\href{https://en.wikipedia.org/wiki/Command-line_interface}{Command Line Interface}} (CLI) that will allow the user to create animations. This project also expects you to display the created animation to the user. Your program must be able to save and load animation files.
 	
 	%Do not change this section.
 	\subsection{Given Code}
@@ -253,18 +239,20 @@
 	\subsubsection{Animating the Scenes, Actually}
 	Animating a scene is nothing more than extracting meaningful information from the scene according to the grammar and applying your graphics knowledge to it. You are expected to load and recolor the image file in the scene according to the color given in the scene description.\\
 	
+	Image files reside in the "lib/" directory of your project folder. The path to this folder is specified to you as a constant at the end of the project file. To load a file from this path, append the path to the beginning of the filename. \\
+	
 	Once you obtain a correctly recolored image file, you can add it to the location specified by the \textbf{from} descriptor. Note that you are expected to place the image in the center of the specified location. (i.e. placing an image to the left means that the middle of the left edge of the image must coincide with the middle of the left edge of the screen.)\\
 	
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=0.8\textwidth]{../img/image_placement.png}
+		\includegraphics[width=1\textwidth]{../img/image_placement.png}
 		\caption{Positioning of images according to the locations. Notice how all images are always in the screen.}
 	\end{figure}
 	
 	Now that you have the image on the screen, you need to move it to the location specified by the \textbf{to} descriptor. Note that this movement must be \textbf{uniform} and must take exactly the amount of time specified by the \textbf{for} descriptor.
 	
+	\newpage
 	
-	%Do not change this section.
 	\subsection{End of Project}
 	Your project ends here. You may continue to tinker with the code to implement any desired features and discuss them with your section leader. Below in the \textbf{Section \ref{further}} are further tasks for you to implement if you are willing to continue practicing the topics. However, \textbf{do not} include any additional features that you implement after this point in to your submission.  
 	\\
@@ -312,6 +300,5 @@
 	\end{center}
 
 	The excerpt above is a funny analogy of the life of an quality assurance engineer. Programs are tested with a wide range of both sensible and senseless inputs. The goal is to fix the program so that there exists no unexpected behavior. Apply the same procedure to your program and try to handle all the errors that may be caused from illegal inputs. An example of this may be only allowing scenes that are correct according to the given grammar. Another example can be handling an error raised by trying to open an file that does not exist.
-	
 	
 \end{document}
