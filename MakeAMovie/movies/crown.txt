@@ -1,0 +1,12 @@
+Title Crazy Crown
+Images crown
+Grammar time color image from to
+Scenes
+For 500 milliseconds yellow crown from left to right
+For 500 milliseconds yellow crown from right to left
+For 500 milliseconds yellow crown from top to bottom
+For 500 milliseconds yellow crown from bottom to top
+For 500 milliseconds yellow crown from left to right
+For 500 milliseconds yellow crown from right to left
+For 500 milliseconds yellow crown from top to bottom
+For 500 milliseconds yellow crown from bottom to top
