@@ -12,6 +12,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{caption}
 \usepackage{titling}
+\usepackage{varwidth}
 
 \usepackage{color}
 
@@ -58,10 +59,8 @@
 	\renewcommand{\headrulewidth}{0.4pt}
 	\renewcommand{\footrulewidth}{0.4pt}
 	
-	
 	\section{Introduction}
 	
-	%Do not change this section.
 	\subsection{Submission}
 	Submit a \textbf{folder} that is \textbf{only} containing your Java source files (*.java) to the course's Homework folder. 
 	\\
@@ -91,63 +90,49 @@
 		\item Please write your name into the Java source file where it is asked for.
 	\end{itemize}
 	
-	%Do not change this section.
 	\subsection{Academic Honesty}
 	Koç University's \emph{\href{https://vpaa.ku.edu.tr/sites/vpaa.ku.edu.tr/files/Misc_Documents/Statement_on_Academic_Honesty.pdf}{Statement on Academic Honesty}} holds for all the homeworks given in this course. Failing to comply with the statement will be penalized accordingly. If you are unsure whether your action violates the code of conduct, please consult with your instructor.
 	
 	\subsection{Aim of the Project}
-	In this project you are expected to create a Command Line Interface (CLI) that will allow the user to create animations. This project also expects you to display the created animation to the user. Your program must be able to save and load animation files.
+	In this project you are expected to create a \emph{\href{https://en.wikipedia.org/}{Command Line Interface}} (CLI) that will allow the user to create animations. This project also expects you to display the created animation to the user. Your program must be able to save and load animation files.
 	
 	%Do not change this section.
 	\subsection{Given Code}
 	This part is \textbf{optional} but advised as it will allow you to understand the given partitions of the code better. \textbf{Do not} change anything in the code if it is indicated to you with a comment. The code given to you has something called \textbf{JavaDoc} comments above all the methods. These comments allow you to view various information about the method when you mouse over the name of the method. Below are the methods given to you in the code with their explanation.
 	
-	%Explain the methods you have given in this section.
-	%Examples are given below.
 	\subsubsection{Given Methods}
 	
-	%This is a list. Lists always begin with this tag. "itemize" describes the list, not begin.
 	\begin{itemize}
+
+		\item \lstinline{void init()}
 		
-		%This is a list item. There is no need to indicate the end for an item as it ends at the next item tag.
-		\item
+		This is the default initializer for the \lstinline{acm.GraphicsProgram}. It is guaranteed to run before the \lstinline{run()} method. In this project, this method is used to print the welcome message to the console. Do \textbf{not} modify this method.
 		
-		%This is a code block. "lstlisting" describes a code block.
-		\begin{lstlisting}
-		void methodWithNoArguments()
-		\end{lstlisting}
-		This is an example method with no arguments.
-		\item
-		\begin{lstlisting}
-		int methodWithIntegerValue()
-		\end{lstlisting}
+		\item \lstinline{void run()}
 		
-		%This is an example usage of inline code block.
-		This is an example method that returns an \lstinline{int}.
-		\item
-		\begin{lstlisting}
-		void methodWithArguments(int arg1, int arg2)
-		\end{lstlisting}
-		This method constructs the roads and the crossing and adds them to the screen. See below for how the roads are created individually.
+		This is the entry point for your program. Feel free to modify it as you wish.
+		
+		\item \lstinline{int generatePixelFromColor(int pixel, Color c)} 
+		
+		This method converts a given pixel to the given color. This is used to preserve the original alpha value of the pixel. You are not required to use this method, however should you choose not to use it, you are still expected to preserve the alpha values of the pixels.
+		
+		\item \lstinline{Color generateColorFromString(String str)} 
+		
+		This method returns a \lstinline{Color} object associated with a given \lstinline{String} value. You can use this method to convert a \lstinline{String} to a \lstinline{Color} to recolor an image.
+		
 		
 	\end{itemize}
 	
-	%Do not change this section.
 	\subsubsection{Given Constants}
 	Constants are given at the bottom of the project. All constants provide \textbf{JavaDoc} comments above them. Please read these to understand what constant is used for what. \textbf{Do not} use another variable or a static value for something if there is a constant variable defined for that purpose.
 	
-	%Do not change this section.
 	\subsection{Further Questions}
 	For further questions \textbf{about the project} you may contact \textbf{\contactName} at \href{mailto:\contactMail}{\mbox{[\contactMail]}}. Note that it may take up to 24 hours before you receive a response so please ask your questions \textbf{before} it is too late. No questions will be answered when there is \textbf{less than two days} left for the submission.
-	
-	%This allows you to start a new page regardless of where the previous page ends. Please try to separate sections properly, however refrain from leaving extensive amounts of blank space as this may cause the students to think that the project file ends there.
-	\newpage
 	
 	\section{Project Tasks}
 	\label{tasks}
 	The project tasks are divided into subsections to make it easier to understand and implement. You are strictly advised to follow the given order of tasks, however should you choose not to follow the tasks in order, it is possible to implement the project in any order.
 	
-	%Number of task groups and tasks are dependent on the project. Feel free to change accordingly.
 	\subsection{Creating a Command Line Interface}
 	A Command Line Interface (CLI) is a means of interacting with a program where the user issues commands in the form of successive lines of texts. In this task you are expected to create a simple CLI that needs to be capable of recognizing the following commands:
 	\label{commands}
@@ -174,34 +159,34 @@
 	
 	\subsubsection{Detecting All Commands}
 	
-	Now that you have a basic CLI that is capable of recognizing a specific input, you can proceed by detecting all the commands shown in Section \ref{commands}. You may modify the names of the commands, however you are required to state all the changes when the "help" command is called. Note that as you implement the tasks below, you are expected to link them to these commands.
+	Now that you have a basic CLI that is capable of recognizing a specific input, you can proceed by detecting all the commands shown in Section \ref{commands}. You may modify the names of the commands, however you are \textbf{required} to state all the changes when the "help" command is called. Note that as you implement the tasks below, you are expected to link them to these commands. \\
 	
 	\noindent \textbf{Advice:} You can implement temporary methods for all the commands you have detected and for now print a text that states the command is executed properly.
 	
 	\subsubsection{Distinguishing Commands From Output}
 	
 	If you have implemented the suggested way of checking your CLI, you may have noticed that the input and the output lines are mixing up. To prevent this confusion you are expected to print a constant string before taking an input from the user. This is the string defined as \textbf{CLI\_INPUT\_CONST} in the given code.
-	
-	%This is a figure. image.png is the path of the image file that will be used.
-	%\begin{figure}[!htb]
-	%	\centering
-	%	\includegraphics[width=0.5\textwidth]{image.png}
-	%	\caption{Example image with a caption. Note that all image captions are titled with the word "Figure" followed by a number. You can use labels to refer to figures as well.}\label{fig:image}
-	%\end{figure}
-	
-	%This is a referral to Figure \ref{fig:image}. 
-	
+
 	\subsection{Creating a New Project}
-	In this task you will create a new project from scratch. To be able to achieve this, you need to first understand the animation file format. Below, you can find an example valid project file.\\
+	In this task you will create a new project from scratch. To be able to achieve this, you need to first understand the animation file format. Below, you can find an example valid project file.
 	\label{example}
-	\begin{lstlisting}
+	\begin{center}
+	\fcolorbox{lightgray}{white}{\begin{varwidth}{\textwidth}
 		Title New Movie
+		
 		Images ball tree
+		
 		Grammar time color image from to
+		
 		Scenes
+		
 		For 5 seconds red ball from left to right
+		
 		For 1500 milliseconds green tree from bottom to top
-	\end{lstlisting}
+		
+	\end{varwidth}}	
+	\end{center}
+
 	
 	The first line always starts with the keyword \textbf{Title} and is followed by the title of the animation. Note that the animation title is not necessarily a single word. The second line always starts with the keyword \textbf{Images} and is followed by the name of all image files that are going to be used in the animation. The third line always starts with the keyword \textbf{Grammar} and is followed by the grammar specification of the animation. The fourth line is the keyword \textbf{Scenes} which is followed by scene descriptions, one per line. The scene descriptions are required to follow the grammar.\\
 	
@@ -227,7 +212,7 @@
 	
 	In this task you are required to start implementing the commands that your CLI can detect. Start with the \textbf{create} command, which is expected to ask the user for a new project name. (Note that this is different from the project title.) Once you get this name for the project, modify your CLI so that it displays this name before the \textbf{CLI\_INPUT\_CONST} seperated with a '@' character. \\
 	
-	Example for project name Example: \textbf{Example@MakeAMovie -\textgreater}\\
+	\noindent Example for project name TestProject: \textbf{TestProject@MakeAMovie -\textgreater}\\
 	
 	Now that you have created a new project (not yet, really) you may also implement the \textbf{settitle} command. This command will ask the user for a title, later on you will be expected to save these to a file so please make sure that you do not lose any information the user inputs.\\
 	
@@ -237,9 +222,19 @@
 	
 	As you have acquired the grammar specification, you may now allow the user to start inputting new scenes. Implement the \textbf{addscene} command so that the user can add a scene by describing it according to the grammar that they defined. This command will read a \textbf{single} line of user input. \\
 	
-	\noindent \textbf{Hint:} String class has a method \lstinline{split(String str)} which splits the string it is \textbf{called on} and returns an array of strings that were originally separated by str. (Example: \lstinline{"This-is-a-test-string".split("-")} will return a string array of \{"This", "is", "a", "test", "string"\}) \\
+	\noindent \textbf{Hint:} String class has a method \lstinline{split(String str)} which splits the string it is \textbf{called on} and returns an array of strings that were originally separated by str. (Example: \lstinline{"This-is-a-test-string".split("-")} will return a string array of \{"This", "is", "a", "test", "string"\}) Note that the string the method is called on can be a variable as well. \\
 	
 	After an excessive usage of \textbf{addscene} command a user may lose track of the scenes added, and may want to see what is currently in the project. At this point you are expected to implement the \textbf{listscenes} command that will list all the current scenes in order, starting their enumeration from 1. (Meaning the first scene is the scene number 1) \\
+	
+	\begin{center}
+		\fcolorbox{lightgray}{white}{\begin{varwidth}{\textwidth}
+				1) For 5 seconds red ball from left to right
+				
+				2) For 1500 milliseconds green tree from bottom to top
+				
+		\end{varwidth}}	
+	\end{center}
+	\emph{An example output from \textbf{listscenes} command that shows how the enumeration works.}\\
 	
 	Once seeing all the scenes present in the project, a user may want to remove a scene from the animation. Notice how you enumerated the scenes in the \textbf{listscenes} command, you are now required to implement \textbf{removescene} command. This command will ask the user to input a scene number, and will remove it from the project. After a removal, the enumeration of the scenes may change if the scene removed was not the last scene. (In an animation with four scenes, the removal of second scene would make the third the second and the fourth the third.) \\
 	
@@ -262,7 +257,7 @@
 	
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=1\textwidth]{../img/image_placement.png}
+		\includegraphics[width=0.8\textwidth]{../img/image_placement.png}
 		\caption{Positioning of images according to the locations. Notice how all images are always in the screen.}
 	\end{figure}
 	
@@ -274,30 +269,49 @@
 	Your project ends here. You may continue to tinker with the code to implement any desired features and discuss them with your section leader. Below in the \textbf{Section \ref{further}} are further tasks for you to implement if you are willing to continue practicing the topics. However, \textbf{do not} include any additional features that you implement after this point in to your submission.  
 	\\
 	
-	\noindent \textbf{Final Warning: Do not include anything beyond this point to your submission. Points may be deducted from your grade as Section \ref{further} alters the normal behavior of the simulation.} 
+	\noindent \textbf{Final Warning: Do not include anything beyond this point to your submission.} 
 	
-	%Do not change this section.
+	\newpage
+	
 	\section{Further Tasks}
 	\label{further}
-	Tasks described in this section are \textbf{not} included to your project, but are provided for studying the topics further. \textbf{Do not} submit your project with any of these tasks completed. You will only be graded for the tasks in \textbf{Section \ref{tasks}}. Also note that tasks below are meant to be implemented on their own but may function together as well.
+	Tasks described in this section are \textbf{not} included to your project, but are provided for studying the topics further. \textbf{Do not} submit your project with any of these tasks completed. You will only be graded for the tasks in \textbf{Section \ref{tasks}}.
+
+	\subsection{A More Complex Understanding}
+	As is, your program is capable of understanding colors that are preset by Java. It can also only understand a given subset of locations defined by you. This however is very restrictive. There are a few things you can implement to extend the capabilities of your program.
 	
-	%You may alter the number of further tasks according to your project.
-	\subsection{Further Task 1}
-	Any further tasks that may be used by the students to study further and improve their skills is described here.
+	\subsubsection{Understanding RGBA}
+	Modify your program so that it can \textbf{also} understand a color given the RGBA value in the following format: (R, G, B, A). Notice as you are specifying the alpha value as well, you will need a different way to recolor images.
 	
-	\subsubsection{Task 1 of Further Task 1}
-	First task.
+	\subsubsection{Understanding Coordinates}
+	Modify your program so that it can \textbf{also} understand a location given the XY value in the following format: (X, Y). When a coordinate is specified in this format, place the center point of the image to the given coordinate.
 	
-	\subsubsection{Task 2 of Further Task 1}
-	Second task.
+	\subsubsection{Quality Assurance}
+	\begin{center}
+		\fcolorbox{lightgray}{white}{\begin{varwidth}{\textwidth}
+				A QA engineer walks into a bar, and orders a beer.
+				
+				Then he orders 0 beers.
+				
+				Then he orders 999999999999 beers.
+				
+				Then he orders an aardvark.
+				
+				Then he orders nothing.
+				
+				Then he orders -1 beers.
+				
+				Then he orders null beers.
+				
+				Then he orders asnwikfjsdf.
+				
+				Finally, the QA engineer leaves without paying,
+				
+				comes back, and asks for the tab.
+		\end{varwidth}}	
+	\end{center}
+
+	The excerpt above is a funny analogy of the life of an quality assurance engineer. Programs are tested with a wide range of both sensible and senseless inputs. The goal is to fix the program so that there exists no unexpected behavior. Apply the same procedure to your program and try to handle all the errors that may be caused from illegal inputs. An example of this may be only allowing scenes that are correct according to the given grammar. Another example can be handling an error raised by trying to open an file that does not exist.
 	
-	\subsubsection{Task 3 of Further Task 1}
-	Second task.
-	
-	\subsubsection{Further Task 2}
-	Alternatively further tasks may be short enough to not include task. In this case just explain the task in this section.
-	
-	\subsubsection{Further Task 3}
-	Third further task.
 	
 \end{document}
