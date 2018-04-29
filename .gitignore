@@ -31,3 +31,6 @@ hs_err_pid*
 
 # Additional Java
 *.policy.applet
+
+# Photoshop
+.psd

@@ -19,6 +19,8 @@
 
 \setlength{\droptitle}{-4em}
 
+\graphicspath{{../img/}}
+
 %Project Title
 \newcommand{\projectTitle}{Make A Movie}
 %Homework Number
@@ -215,6 +217,12 @@
 
 	\noindent \textbf{Note:} The locations described in the \textbf{from} and \textbf{to} descriptors can take the following values: left, right, top, bottom, center.
 	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=0.8\textwidth]{../img/example_grammar.png}
+		\caption{An example scene description according to multiple different grammars. Descriptors of the same type are colored in the same color. Grammar specified for each scene resides below it.}
+	\end{figure}
+	
 	\subsubsection{Creating a New Project, Actually.}
 	
 	In this task you are required to start implementing the commands that your CLI can detect. Start with the \textbf{create} command, which is expected to ask the user for a new project name. (Note that this is different from the project title.) Once you get this name for the project, modify your CLI so that it displays this name before the \textbf{CLI\_INPUT\_CONST} seperated with a '@' character. \\
@@ -225,9 +233,11 @@
 	
 	Once you achieved getting the title from the user, you may proceed with the \textbf{setgrammar} command. This command will take the ordering of the grammar descriptors defined in Section \ref{grammar} from the user. You will later on use this to parse the animation scenes.\\
 	
-	\noindent \textbf{Hint:} You may want to save the grammar to either a string or an array of strings. \\
+	\noindent \textbf{Hint:} You may want to save the grammar to either a string, an array of strings or something else as it is later on required. \\
 	
 	As you have acquired the grammar specification, you may now allow the user to start inputting new scenes. Implement the \textbf{addscene} command so that the user can add a scene by describing it according to the grammar that they defined. This command will read a \textbf{single} line of user input. \\
+	
+	\noindent \textbf{Hint:} String class has a method \lstinline{split(String str)} which splits the string it is \textbf{called on} and returns an array of strings that were originally separated by str. (Example: \lstinline{"This-is-a-test-string".split("-")} will return a string array of \{"This", "is", "a", "test", "string"\}) \\
 	
 	After an excessive usage of \textbf{addscene} command a user may lose track of the scenes added, and may want to see what is currently in the project. At this point you are expected to implement the \textbf{listscenes} command that will list all the current scenes in order, starting their enumeration from 1. (Meaning the first scene is the scene number 1) \\
 	
@@ -249,6 +259,12 @@
 	Animating a scene is nothing more than extracting meaningful information from the scene according to the grammar and applying your graphics knowledge to it. You are expected to load and recolor the image file in the scene according to the color given in the scene description.\\
 	
 	Once you obtain a correctly recolored image file, you can add it to the location specified by the \textbf{from} descriptor. Note that you are expected to place the image in the center of the specified location. (i.e. placing an image to the left means that the middle of the left edge of the image must coincide with the middle of the left edge of the screen.)\\
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=1\textwidth]{../img/image_placement.png}
+		\caption{Positioning of images according to the locations. Notice how all images are always in the screen.}
+	\end{figure}
 	
 	Now that you have the image on the screen, you need to move it to the location specified by the \textbf{to} descriptor. Note that this movement must be \textbf{uniform} and must take exactly the amount of time specified by the \textbf{for} descriptor.
 	
