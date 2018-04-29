@@ -1,4 +1,6 @@
 import java.awt.Color;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 
 import acm.graphics.GImage;
 import acm.program.GraphicsProgram;
@@ -10,6 +12,7 @@ public class Main extends GraphicsProgram {
 	 * Do <b>not</b> modify.
 	 */
 	public void init(){
+		setTitle("MakeAMovie");
 		println("Welcome to Make a Movie!");
 		println("Start by either creating a new project or opening an existing one.");
 	}
