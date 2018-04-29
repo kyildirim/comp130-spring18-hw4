@@ -1,0 +1,7 @@
+Title Aquarium The Sequel
+Images fish
+Grammar time color image from to
+Scenes
+for 3 seconds blue fish from right to left
+for 3 seconds blue fish from left to right
+for 1500 milliseconds blue fish from right to center

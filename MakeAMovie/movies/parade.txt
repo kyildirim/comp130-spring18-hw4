@@ -1,0 +1,7 @@
+Title Parade
+Images fish duck zeppelin
+Grammar time color image from to
+Scenes
+for 2 seconds blue fish from right to left
+for 2 seconds yellow duck from left to right
+for 2 seconds red zeppelin from right to left

@@ -1,0 +1,7 @@
+Title Aquarium
+Images fish
+Grammar color image from to time
+Scenes
+blue fish from right to left for 3 seconds
+blue fish from left to right for 3 seconds
+blue fish from right to center for 1500 milliseconds

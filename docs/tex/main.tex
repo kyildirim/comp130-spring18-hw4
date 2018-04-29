@@ -222,13 +222,15 @@
 	\end{center}
 	\emph{An example output from \textbf{listscenes} command that shows how the enumeration works.}\\
 	
-	Once seeing all the scenes present in the project, a user may want to remove a scene from the animation. Notice how you enumerated the scenes in the \textbf{listscenes} command, you are now required to implement \textbf{removescene} command. This command will ask the user to input a scene number, and will remove it from the project. After a removal, the enumeration of the scenes may change if the scene removed was not the last scene. (In an animation with four scenes, the removal of second scene would make the third the second and the fourth the third.) \\
+	Once seeing all the scenes present in the project, a user may want to remove a scene from the animation. Notice how you enumerated the scenes in the \textbf{listscenes} command, you are now required to implement \textbf{removescene} command. This command will ask the user to input a scene number, and will remove it from the project. After a removal, the enumeration of the scenes may change if the scene removed was not the last scene. (In an animation with four scenes, the removal of second scene would make the third the second and the fourth the third.) 
 	
 	\subsubsection{Saving and Loading a Project}
 
 	While testing your program you may have noticed that it is annoying to reenter all the information about a project. To solve this problem, you are expected to implement \textbf{save} command. Create a new file using the project name (not project title) and the \textbf{FILE\_TYPE} constant provided. (Note that the FILE\_TYPE is the extension of the file, thus it is required to be at the end of the file name) You are required to save the project information in the same format as provided and explained in Section \ref{example}. \\
 	
-	Now that you can save your project files, you also need to be able to open them later on using the \textbf{open} command. This command asks the user for a file name and loads the information saved in that file. (Note that the user enters the file name without the FILE\_TYPE)
+	Now that you can save your project files, you also need to be able to open them later on using the \textbf{open} command. This command asks the user for a file name and loads the information saved in that file. (Note that the user enters the file name without the FILE\_TYPE) \\
+	
+	\noindent \textbf{Note:} See the associated constant with the movie paths for the directory from which to read from and save to. 
 	
 	\subsection{Making Your Film (Where the Magic Happens)}
 	Up until now, you worked with the boring infrastructure of the project. Now is the time for you to become the director of your (or maybe someone else's) film! The tasks below will guide you through the process of animating the scenes.

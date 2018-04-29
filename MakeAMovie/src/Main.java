@@ -57,12 +57,19 @@ public class Main extends GraphicsProgram {
 	public static String CLI_INPUT_STR = "MakeAMovie -> ";
 	
 	/**
+	 * Path to the folder enclosing movie files.
+	 * Read and write movies to this path.
+	 */
+	public static String MOVIES_PATH = "movies/";
+	
+	/**
 	 * File extension of project files.
 	 */
 	public static String FILE_TYPE = ".txt";
 	
 	/**
 	 * Path to the folder enclosing the images.
+	 * Read images from this path.
 	 */
 	public static String LIBRARY_PATH = "lib/";
 	

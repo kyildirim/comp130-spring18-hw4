@@ -1,6 +1,0 @@
-Title New Movie
-Images ball tree
-Grammar time color image from to
-Scenes
-For 5 seconds red ball from left to right
-For 1500 milliseconds green tree from bottom to top
